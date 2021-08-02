@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+
+{%block head%}
+
+{% endblock %}
+
+
+{% block body %}
+
+{% for post in posts %}
+<div class="card border-secondary mb-3" >
+ <div class="card-header container">
+  <div class="row">
+    <div class="col">
+      <img src="../static/images/dragon.png" alt="user img" class="rounded-circle" style="max-width:2rem">
+      <a  href="#">{{post.author}}</a>
+    </div>    
+
+    <div class="col text-right">
+      <small class="text-right">{{ post.date_posted }}</small>
+      </div
+      >
+    </div>
+  </div>
+  <div class="card-body text-dark">
+    {% if (post.title) != '' %} 
+    <h5 class="card-title">{{ post.title }}</h5>
+    {%endif%} 
+    <p class="card-text">{{post.content}}</p>
+  </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
+
+
+{% block sidebar %}
+<div class="col-md-4">
+  <div class="content-section">
+    <h3>Our Sidebar</h3>
+    <p class='text-muted'>You can put any information here you'd like.
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-light">Latst Posts</li>
+        <li class="list-group-item list-group-item-light">Announcements</li>
+        <li class="list-group-item list-group-item-light">Calendars</li>
+        <li class="list-group-item list-group-item-light">etc</li>
+      </ul>
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+
+
